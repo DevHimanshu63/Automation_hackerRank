@@ -45,12 +45,14 @@ BrowserOpenPromise.then(function (browser){
       return algorithmTabWillBeOPenedPromise;
 }).then(function(){
     // console.log("compete button clicked");
-    let solvechallenge=waitAndClickChallenge(".ui-btn.ui-btn-normal.primary-cta.ui-btn-line-primary.ui-btn-styled")
+    let solvechallenge=waitAndClick(".ui-btn.ui-btn-normal.primary-cta.ui-btn-line-primary.ui-btn-styled")
     return solvechallenge;
 }).then(function(){
     console.log("solvechallenge");
-    
-    
+    let checkbox=waitAndClick(".checkbox-input")
+     return checkbox;
+}).then(function(){
+    console.log("checkbox is clicked");
 })
 .catch(function (err){
     console.log(err);
@@ -74,17 +76,17 @@ function waitAndClick(){
     // return ;
 }
 
-function waitAndClickChallenge(){
-    // console.log(arguments)
-    let challengeArguments=arguments[0]
+// function waitAndClickChallenge(){
+//     // console.log(arguments)
+//     let challengeArguments=arguments[0]
     
-    let solvechallengebtn=cTab.waitForSelector(challengeArguments)
+//     let solvechallengebtn=cTab.waitForSelector(challengeArguments)
 
-    solvechallengebtn.then(function(){
+//     solvechallengebtn.then(function(){
 
-        let questionsolveclick=cTab.click(challengeArguments)
-        return questionsolveclick;
-    }).then(function(){
-        console.log("challlenge successgul open");
-    })
-}
+//         let questionsolveclick=cTab.click(challengeArguments)
+//         return questionsolveclick;
+//     }).then(function(){
+//         console.log("challlenge successgul open");
+//     })
+// }
